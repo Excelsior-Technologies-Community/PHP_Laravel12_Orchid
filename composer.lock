@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "877f4c913ed11c6d5846bbe6ae6e6209",
+    "content-hash": "2131f747063215d36fd0dec43e878586",
     "packages": [
         {
             "name": "brick/math",
@@ -2749,23 +2749,23 @@
         },
         {
             "name": "orchid/platform",
-            "version": "14.52.5",
+            "version": "14.53.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchidsoftware/platform.git",
-                "reference": "935e52658fe578e40e2d3d960c0c1ae26070a27f"
+                "reference": "ad9ef91481344d03d158f5f1c3a527d0efc79c0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchidsoftware/platform/zipball/935e52658fe578e40e2d3d960c0c1ae26070a27f",
-                "reference": "935e52658fe578e40e2d3d960c0c1ae26070a27f",
+                "url": "https://api.github.com/repos/orchidsoftware/platform/zipball/ad9ef91481344d03d158f5f1c3a527d0efc79c0e",
+                "reference": "ad9ef91481344d03d158f5f1c3a527d0efc79c0e",
                 "shasum": ""
             },
             "require": {
                 "composer-runtime-api": "^2.2",
                 "composer/semver": "^3.0",
-                "laravel/framework": "^10.0 || ^11.0 || ^12.0",
-                "laravel/scout": "^9.0 || ^10.0",
+                "laravel/framework": "^10.0 || ^11.0 || ^12.0 || ^13.0",
+                "laravel/scout": "^9.0 || ^10.0 || ^11.0",
                 "orchid/blade-icons": "^4.0",
                 "tabuna/breadcrumbs": "^4.0",
                 "twbs/bootstrap-icons": "^1.10",
@@ -2779,9 +2779,9 @@
             "require-dev": {
                 "fakerphp/faker": "^1.9.1",
                 "laravel/pint": "^1.14",
-                "orchestra/testbench": "^8.0 || ^9.0 || ^10.0",
-                "orchestra/testbench-core": "^8.0 || ^9.0 || ^10.0",
-                "orchestra/testbench-dusk": "^8.0 || ^9.0 || ^10.0",
+                "orchestra/testbench": "^8.0 || ^9.0 || ^10.0 || ^11.0",
+                "orchestra/testbench-core": "^8.0 || ^9.0 || ^10.0 || ^11.0",
+                "orchestra/testbench-dusk": "^8.0 || ^9.0 || ^10.0 || ^11.0",
                 "phpunit/phpunit": "^10.0 || ^11.0 || ^12.0"
             },
             "suggest": {
@@ -2852,7 +2852,7 @@
                     "type": "opencollective"
                 }
             ],
-            "time": "2025-12-01T21:17:15+00:00"
+            "time": "2026-03-21T22:58:39+00:00"
         },
         {
             "name": "phpoption/phpoption",
