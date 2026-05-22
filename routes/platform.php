@@ -20,6 +20,11 @@ use App\Orchid\Screens\User\UserProfileScreen;
 use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
 use App\Orchid\Screens\ActivityLogScreen;
+use App\Orchid\Screens\Project\ProjectListScreen;
+use App\Orchid\Screens\Project\ProjectEditScreen;
+
+Route::screen('projects', ProjectListScreen::class)->name('platform.project.list');
+Route::screen('project/{project?}', ProjectEditScreen::class)->name('platform.project.edit');
 
 /*
 |--------------------------------------------------------------------------
