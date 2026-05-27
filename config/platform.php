@@ -18,6 +18,31 @@ return [
 
     'domain' => env('PLATFORM_DOMAIN'),
 
+    'permissions' => [
+    // ... existing permissions
+    
+    'platform.tasks' => [
+        'label' => 'Tasks Management',
+        'slug' => 'platform.tasks',
+        'description' => 'Manage tasks, view task lists, create and edit tasks',
+    ],
+    'platform.tasks.create' => [
+        'label' => 'Create Tasks',
+        'slug' => 'platform.tasks.create',
+        'description' => 'Permission to create new tasks',
+    ],
+    'platform.tasks.edit' => [
+        'label' => 'Edit Tasks',
+        'slug' => 'platform.tasks.edit',
+        'description' => 'Permission to edit existing tasks',
+    ],
+    'platform.tasks.delete' => [
+        'label' => 'Delete Tasks',
+        'slug' => 'platform.tasks.delete',
+        'description' => 'Permission to delete tasks',
+    ],
+],
+
     /*
      |--------------------------------------------------------------------------
      | Route Prefixes
