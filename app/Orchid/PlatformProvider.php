@@ -17,77 +17,60 @@ class PlatformProvider extends OrchidServiceProvider
         parent::boot($dashboard);
     }
 
-    public function menu(): array
-    {
-        return [
-            Menu::make('Get Started')
-                ->icon('bs.book')
-                ->title('Navigation')
-                ->route(config('platform.index')),
-
-            Menu::make('Sample Screen')
-                ->icon('bs.collection')
-                ->route('platform.example')
-                ->badge(fn() => 6),
-
-            Menu::make('Form Elements')
-                ->icon('bs.card-list')
-                ->route('platform.example.fields')
-                ->active('*/examples/form/*'),
-
-            Menu::make('Layouts Overview')
-                ->icon('bs.window-sidebar')
-                ->route('platform.example.layouts'),
-
-            Menu::make('Grid System')
-                ->icon('bs.columns-gap')
-                ->route('platform.example.grid'),
-
-            Menu::make('Charts')
-                ->icon('bs.bar-chart')
-                ->route('platform.example.charts'),
-
-            Menu::make('Cards')
-                ->icon('bs.card-text')
-                ->route('platform.example.cards')
-                ->divider(),
-
-            Menu::make('Projects')
-                ->icon('bs.briefcase')
-                ->route('platform.project.list')
-                ->title('Management'),
-
-            Menu::make(__('Users'))
-                ->icon('bs.people')
-                ->route('platform.systems.users')
-                ->permission('platform.systems.users')
-                ->title(__('Access Controls')),
-
-            Menu::make(__('Roles'))
-                ->icon('bs.shield')
-                ->route('platform.systems.roles')
-                ->permission('platform.systems.roles')
-                ->divider(),
-
-            Menu::make('Activity Logs')
-                ->icon('bs.clock-history')
-                ->route('platform.activity.logs')
-                ->title('System Monitoring'),
-
-            Menu::make('Documentation')
-                ->title('Docs')
-                ->icon('bs.box-arrow-up-right')
-                ->url('https://orchid.software/en/docs')
-                ->target('_blank'),
-
-            Menu::make('Changelog')
-                ->icon('bs.box-arrow-up-right')
-                ->url('https://github.com/orchidsoftware/platform/blob/master/CHANGELOG.md')
-                ->target('_blank')
-                ->badge(fn() => Dashboard::version(), Color::DARK),
-        ];
-    }
-
+   public function menu(): array
+{
+    return [
+        // Dashboard
+        Menu::make('Dashboard')
+            ->icon('home')
+            ->route('platform.dashboard')
+            ->title('Overview'),
+            
+        // Tasks Section
+        Menu::make('Tasks')
+            ->icon('list')
+            ->title('Task Management'),
+            
+        Menu::make('All Tasks')
+            ->icon('list')
+            ->route('platform.task.list')
+            ->parent('Tasks')
+            ->badge(fn () => \App\Models\Task::pending()->count()),
+            
+        Menu::make('Create Task')
+            ->icon('plus')
+            ->route('platform.task.create')
+            ->parent('Tasks'),
+            
+        Menu::make('Task Categories')
+            ->icon('folder')
+            ->route('platform.task.categories')
+            ->parent('Tasks')
+            ->canSee(false), // To be implemented
+            
+        // Projects (existing)
+        Menu::make('Projects')
+            ->icon('briefcase')
+            ->route('platform.project.list'),
+            
+        // Users & Roles (existing)
+        Menu::make('Users')
+            ->icon('user')
+            ->route('platform.systems.users')
+            ->permission('platform.systems.users'),
+            
+        Menu::make('Roles')
+            ->icon('lock')
+            ->route('platform.systems.roles')
+            ->permission('platform.systems.roles'),
+            
+        // Activity Logs (existing)
+        Menu::make('Activity Logs')
+            ->icon('clock')
+            ->route('platform.activity.logs')
+            ->permission('platform.systems.users'),
+    ];
+}
     public function permissions(): array
     {
         return [
